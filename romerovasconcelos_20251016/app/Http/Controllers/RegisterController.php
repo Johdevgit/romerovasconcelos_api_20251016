@@ -28,15 +28,15 @@ class RegisterController extends BaseController
             'password.required' => 'La contraseña es obligatoria.',
             'password.min' => 'La contraseña debe tener al menos 8 caracteres.',
             'password.max' => 'La contraseña no debe superar los 20 caracteres.',
-            'c_password.required' => 'La confirmación de la contraseña es obligatoria.',
-            'c_password.same' => 'Las contraseñas no coinciden.',
+            'confirm_password.required' => 'La confirmación de la contraseña es obligatoria.',
+            'confirm_password.same' => 'Las contraseñas no coinciden.',
         ];
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|min:4|max:100',
             'email'=> 'required|email|unique:users,email|max:100',
             'password'=> 'required|min:8|max:20',
-            'c_password'=>'required|same:password'
+            'confirm_password'=>'required|same:password'
             
         ],$messages);
 
